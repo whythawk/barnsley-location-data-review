@@ -1,0 +1,39 @@
+========================================================================================================
+INITIAL POETRY BUILD
+========================================================================================================
+
+# Pyenv to manage Python version
+https://github.com/pyenv/pyenv
+https://github.com/pyenv/pyenv/blob/master/COMMANDS.md
+
+# Upgrade Pyenv
+cd /home/bue/.pyenv/plugins/python-build/../.. && git pull && cd -
+
+# Then
+pyenv install 3.9.4
+pyenv which python3.9.4
+pyenv local 3.9.4
+
+# Then Poetry environment
+https://python-poetry.org/docs/managing-environments/#switching-between-environments
+
+poetry env use /full/path/to/python
+
+# Add in required development components
+
+poetry add jupyterlab numpy pandas matplotlib seaborn
+
+# And start.
+
+========================================================================================================
+JUPYTER PDF SUPPORT
+========================================================================================================
+
+# https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex.
+sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-generic-recommended
+
+# Yields error: 'E: Unable to locate package texlive'
+# https://askubuntu.com/a/1294644
+sudo apt-get update
+sudo apt upgrade
+sudo apt-get install texlive-xetex
